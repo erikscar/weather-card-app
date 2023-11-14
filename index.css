@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Signika Negative', sans-serif;
+}
+
+:root {
+  --background-image: url("src/img/clearskyD.jpg");
+  --primary-color: #fff;
+}
+
+body {
+  background-image: var(--background-image);
+  background-size: cover;
+  width: 100%;
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+a {
+  color: rgb(43, 10, 192);
+}
+
+.main_card {
+  width: 28rem;
+  height: 35rem;
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.16);
+  border: 2px solid rgba(255, 255, 255, 0.16) ;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: .5rem ;
+}
+
+.weather_description {
+  text-transform: uppercase;
+  letter-spacing: .3rem;
+  margin-top: 1rem;
+  margin-left: 2rem;
+}
+
+.temperature_wrapper {
+  display: flex;
+}
+
+.temperature {
+  font-size: 6rem;
+  margin-top: 2.5rem;
+}
+
+#celsius {
+  font-size: 2rem;
+  margin-top: 3.7rem;
+}
+
+#misc_information {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.2rem;
+}
+
+.misc_information_wrapper {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.location_wrapper,
+.location_input_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.location_wrapper {
+  gap: 1rem;
+  padding: 2rem;
+  font-size: 1.5rem;
+}
+
+.location_input{
+  padding: .25rem 3rem ;
+  border-radius: 2rem;
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  font-size: 1.2rem;
+  text-align: center;
+  letter-spacing: .3rem;
+}
+.location_input::placeholder {
+  color: var(--primary-color);
+}
+
+#searchBtn {
+  padding: 0.25rem 0.5rem;
+  border-radius: .5rem;
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  margin-top: 0.25rem;
+  width: 30%;
+  margin: 1rem auto;
+  font-size: 1.2rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  padding: 1rem;
+  color: var(--primary-color);
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+.icons_wrapper {
+  background: rgba(255, 255, 255, 0.16);
+  border: 2px solid rgba(255, 255, 255, 0.16) ;
+  border-radius: 2rem;
+  padding: .5rem 1rem;
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+#hidden {
+  display: none;
+}
