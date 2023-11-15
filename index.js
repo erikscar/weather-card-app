@@ -9,10 +9,35 @@ async function fetchWheather(city) {
   return response
 }
 const switchBackground = (weatherDescription, iconName) => {
-  const convert = weatherDescription.replace(/\s/, "")
-  root.style.setProperty('--background-image', (`url(./src/img/${convert}${iconName}.jpg)`))
-
-
+  let convert = weatherDescription.replace(/\s/, "")
+  if (weatherDescription.match(/thunderstorm/)) {
+    convert = "thunderstorm"
+    root.style.setProperty('--background-image', (`url(./src/img/${convert}${iconName}.jpg)`))
+  }
+  else if ((weatherDescription.match(/fog/)) || (weatherDescription.match(/smoke/)) || (weatherDescription.match(/haze/))) {
+    convert = "mist"
+    root.style.setProperty('--background-image', (`url(./src/img/${convert}${iconName}.jpg)`))
+  }
+  else if ((weatherDescription.match(/sand/)) || (weatherDescription.match(/dust/))) {
+    convert = "sand"
+    root.style.setProperty('--background-image', (`url(./src/img/${convert}${iconName}.jpg)`))
+  }
+  else if (weatherDescription.match(/snow/)) {
+    convert = "snow"
+    root.style.setProperty('--background-image', (`url(./src/img/${convert}${iconName}.jpg)`))
+  }
+  else if (weatherDescription.match(/drizzle/)) {
+    convert = "rain"
+    iconName = "10d"
+    root.style.setProperty('--background-image', (`url(./src/img/${convert}${iconName}.jpg)`))
+  }
+  else if (weatherDescription.match(/rain/)) {
+    convert = "rain"
+    iconName = "10d"
+    root.style.setProperty('--background-image', (`url(./src/img/${convert}${iconName}.jpg)`))
+  } else {
+    root.style.setProperty('--background-image', (`url(./src/img/${convert}${iconName}.jpg)`))
+  }
 }
 const showData = async (city) => {
   const data = await fetchWheather(city)
@@ -26,9 +51,6 @@ const showData = async (city) => {
   document.getElementById('celsius').classList.remove('hidden')
   document.querySelectorAll('.misc_information_wrapper').forEach(wrapper => wrapper.classList.remove('hidden'))
   input.value = ''
-  // const teste = 'mist'
-  // const teste1 = '50n'
-  // switchBackground(teste, teste1)
   switchBackground(data.weather[0].description, data.weather[0].icon)
 }
 
