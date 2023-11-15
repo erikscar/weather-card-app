@@ -20,6 +20,7 @@ const switchBackground = (weatherDescription, iconName) => {
   }
   else if (weatherDescription.match(/overcast clouds/)) {
     convert = "scatteredclouds"
+    iconName = '03d'
     root.style.setProperty('--background-image', (`url(./src/img/${convert}${iconName}.jpg)`))
   }
   else if ((weatherDescription.match(/sand/)) || (weatherDescription.match(/dust/))) {
