@@ -18,11 +18,15 @@ const switchBackground = (weatherDescription, iconName) => {
     convert = "mist"
     root.style.setProperty('--background-image', (`url(./src/img/${convert}${iconName}.jpg)`))
   }
+  else if ((weatherDescription === "overcast clouds")) {
+    convert = "scattered clouds"
+    root.style.setProperty('--background-image', (`url(./src/img/${convert}${iconName}.jpg)`))
+  }
   else if ((weatherDescription.match(/sand/)) || (weatherDescription.match(/dust/))) {
     convert = "sand"
     root.style.setProperty('--background-image', (`url(./src/img/${convert}${iconName}.jpg)`))
   }
-  else if (weatherDescription.match(/snow/)) {
+  else if ((weatherDescription.match(/snow/)) || (weatherDescription.match(/sleet/))) {
     convert = "snow"
     root.style.setProperty('--background-image', (`url(./src/img/${convert}${iconName}.jpg)`))
   }
